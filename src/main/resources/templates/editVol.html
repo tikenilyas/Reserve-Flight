@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+</head>
+<body>
+<div layout:fragment="content">
+<form action="/edit" method="post">
+    <input type="hidden"   name="id" th:value="${volUpdated.getId()}" >
+    <div class="mb-3">
+        <label for="Title" class="form-label">jourDepart</label>
+        <input type="text" class="form-control w-50" id="Title" name="jourDepart" th:value="${volUpdated.getJourDepart()}" >
+
+    </div>
+    <div class="mb-3">
+        <label for="nbPages" class="form-label">heureDepart</label>
+        <input type="number" class="form-control w-50" id="nbPages" name="heureDepart" th:value="${volUpdated.getHeureDepart()}">
+
+    </div>
+    <div class="mb-3">
+        <label for="auteurs" class="form-label">jourArrive</label>
+        <input type="text" class="form-control w-50" id="auteurs" name="jourArrive" th:value="${volUpdated.getJourArrive()}">
+
+    </div>
+    <div class="mb-3">
+        <label for="adherents" class="form-label">heureArrive</label>
+        <input type="text" class="form-control w-50" id="adherents" name="heureArrive" th:value="${volUpdated.getHeureArrive()}">
+    </div>
+    <button type="submit" class="btn btn-primary form-control w-50" value="Modifier">Modifier</button>
+</form>
+</div>
+</body>
+</html>
